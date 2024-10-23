@@ -1,16 +1,16 @@
-langchain==0.0.170
-langchain-anthropic==0.0.4
-langchain-community==0.0.2
-langchain-core==0.0.5
-python-dotenv==1.0.0
-pypdf==3.8.1  # PyPDFLoader depende do PyPDF
-docx==0.2.4  # Alternativamente: python-docx
-python-docx==0.8.11
-streamlit==1.25.0
-anthropic==0.2.4  # SDK oficial da Anthropic para integração
+langchain
+langchain-anthropic
+langchain-community
+langchain-core
+python-dotenv
+pypdf
+docx
+python-docx
+streamlit
+anthropic
 
 # Dependências adicionais
-os-sys==2.1.0  # Usado para manipulação de arquivos e caminhos no sistema operacional
-subprocess==1.4.0  # Para gerenciar subcomandos e processos
-time==3.3.0  # Para operações de temporização
-openai==0.27.0  # Se eventualmente precisar acessar funcionalidades da OpenAI
+os-sys
+subprocess
+time
+openai
