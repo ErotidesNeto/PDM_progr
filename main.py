@@ -52,7 +52,7 @@ def main():
         st.session_state.file_uploader_key = 0
 
     # Área para Petição Inicial
-    peticao_inicial_file = st.file_uploader("Petição Inicial", type="pdf", accept_multiple_files=False, key=f"peticao_inicial_{st.session_state.file_uploader_key}")
+    peticao_inicial_file = st.file_uploader("Petição Inicial (max: 30 páginas)", type="pdf", accept_multiple_files=False, key=f"peticao_inicial_{st.session_state.file_uploader_key}")
     if peticao_inicial_file:
         st.session_state.peticao_inicial_path = save_uploadedfile(peticao_inicial_file, 'peticao_inicial.pdf')
         st.success("Petição Inicial carregada com sucesso!")    
