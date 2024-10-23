@@ -8,9 +8,3 @@ docx
 python-docx
 streamlit
 anthropic
-
-# Dependências adicionais
-os-sys
-subprocess
-time
-openai
