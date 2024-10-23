@@ -130,7 +130,7 @@ def main():
         'portaria': portaria
     }
     
-    print(st.session_state.resultado_atualizado)
+    
     st.markdown("---")
 
     # Botão para gerar a minuta
