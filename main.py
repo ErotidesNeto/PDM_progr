@@ -65,7 +65,10 @@ def main():
             
             start_time = time.time()
             with st.spinner('A IA está analisando'):
-                st.session_state.resultado_analise = analisa_peticao_inicial(st.session_state.peticao_inicial_path)
+                try:
+                    st.session_state.resultado_analise = analisa_peticao_inicial(st.session_state.peticao_inicial_path)
+                except ValueError as e:
+                    st.error(e)
                 end_time = time.time()
                 st.session_state.analize_time = end_time - start_time                
                 st.success(f"Formulário preenchido pela IA em {st.session_state.analize_time:.2f} segundos!")
