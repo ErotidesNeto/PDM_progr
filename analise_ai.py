@@ -45,11 +45,10 @@ def analisa_peticao_inicial(peticao_inicial):
     chain=template|llm|parser
     loader=PyPDFLoader(peticao_inicial)
     docs=loader.load()
-    try:
-        if len(docs)<30:
-            resposta_chain=chain.invoke(docs)    
-            return resposta_chain
-        else: 
-            raise ValueError ("Erro: o arquivo da petição inicial não pode ter mais que 30 páginas")
-    except ValueError as e:
-        st.error(e)
+
+    if len(docs)<30:
+        resposta_chain=chain.invoke(docs)    
+        return resposta_chain
+    else: 
+        raise ValueError ("Erro: o arquivo da petição inicial não pode ter mais que 30 páginas")
+
