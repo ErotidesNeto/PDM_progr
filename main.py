@@ -78,10 +78,10 @@ def main():
     # # Pega os valores analisados para preencher automaticamente
     # resultado = st.session_state.resultado_analise if st.session_state.resultado_analise else {}
     
-    # if resultado:
-    #     st.write(f"Data do ingresso no cargo: {resultado.get('data_ingresso', '')}")
-    #     st.write(f"Data da inatividade: {resultado.get('data_inatividade', '')}")
-    #     st.write(f"Data da petição inicial: {resultado.get('data_peticao', '')}")
+    if resultado:
+        st.write(f"Data do ingresso no cargo: {resultado.get('data_ingresso', '')}")
+        st.write(f"Data da inatividade: {resultado.get('data_inatividade', '')}")
+        st.write(f"Data da petição inicial: {resultado.get('data_peticao', '')}")
     
     # Checkbox para "Prova do vínculo"
     prova_vinculo = st.checkbox(
