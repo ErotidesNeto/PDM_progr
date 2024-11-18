@@ -76,7 +76,7 @@ def main():
     #         st.error('Por favor, carregue todos os arquivos necessários.')
 
     # # Pega os valores analisados para preencher automaticamente
-    # resultado = st.session_state.resultado_analise if st.session_state.resultado_analise else {}
+    resultado = st.session_state.resultado_analise if st.session_state.resultado_analise else {}
     
     if resultado:
         st.write(f"Data do ingresso no cargo: {resultado.get('data_ingresso', '')}")
