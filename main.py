@@ -27,7 +27,7 @@ def main():
     
     st.title('Gerador de Contestação')
     st.subheader('Progressão Magistério')
-    st.write("Arraste e solte o arquivo PDF da petição inicial na área abaixo.")
+    # st.write("Arraste e solte o arquivo PDF da petição inicial na área abaixo.")
     
     st.markdown("---")
 
