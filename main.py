@@ -51,37 +51,38 @@ def main():
     if 'file_uploader_key' not in st.session_state:
         st.session_state.file_uploader_key = 0
 
-    # Área para Petição Inicial
-    peticao_inicial_file = st.file_uploader("Petição Inicial (max: 30 páginas)", type="pdf", accept_multiple_files=False, key=f"peticao_inicial_{st.session_state.file_uploader_key}")
-    if peticao_inicial_file:
-        st.session_state.peticao_inicial_path = save_uploadedfile(peticao_inicial_file, 'peticao_inicial.pdf')
-        st.success("Petição Inicial carregada com sucesso!")    
+    # # Área para Petição Inicial
+    # peticao_inicial_file = st.file_uploader("Petição Inicial (max: 30 páginas)", type="pdf", accept_multiple_files=False, key=f"peticao_inicial_{st.session_state.file_uploader_key}")
+    # if peticao_inicial_file:
+    #     st.session_state.peticao_inicial_path = save_uploadedfile(peticao_inicial_file, 'peticao_inicial.pdf')
+    #     st.success("Petição Inicial carregada com sucesso!")    
       
-    st.markdown("---")
+    # st.markdown("---")
     
-    # Botão para preencher formulário automaticamente
-    if st.button('Preencher com IA'):
-        if st.session_state.peticao_inicial_path:
+    # # Botão para preencher formulário automaticamente
+    # if st.button('Preencher com IA'):
+    #     if st.session_state.peticao_inicial_path:
             
-            start_time = time.time()
-            with st.spinner('A IA está analisando'):                
-                st.session_state.resultado_analise = analisa_peticao_inicial(st.session_state.peticao_inicial_path)              
-                end_time = time.time()
-                st.session_state.analize_time = end_time - start_time                
-                st.success(f"Formulário preenchido pela IA em {st.session_state.analize_time:.2f} segundos!")
-                json_resultado = json.dumps(st.session_state.resultado_analise, ensure_ascii=False, indent=4)
-            #st.json(json_resultado)
+    #         start_time = time.time()
+    #         with st.spinner('A IA está analisando'):                
+    #             st.session_state.resultado_analise = analisa_peticao_inicial(st.session_state.peticao_inicial_path)              
+    #             end_time = time.time()
+    #             st.session_state.analize_time = end_time - start_time                
+    #             st.success(f"Formulário preenchido pela IA em {st.session_state.analize_time:.2f} segundos!")
+    #             json_resultado = json.dumps(st.session_state.resultado_analise, ensure_ascii=False, indent=4)
+    #         #st.json(json_resultado)
                 
-        else:
-            st.error('Por favor, carregue todos os arquivos necessários.')
+    #     else:
+    #         st.error('Por favor, carregue todos os arquivos necessários.')
 
-    # Pega os valores analisados para preencher automaticamente
-    resultado = st.session_state.resultado_analise if st.session_state.resultado_analise else {}
+    # # Pega os valores analisados para preencher automaticamente
+    # resultado = st.session_state.resultado_analise if st.session_state.resultado_analise else {}
     
-    if resultado:
-        st.write(f"Data do ingresso no cargo: {resultado.get('data_ingresso', '')}")
-        st.write(f"Data da inatividade: {resultado.get('data_inatividade', '')}")
-        st.write(f"Data da petição inicial: {resultado.get('data_peticao', '')}")
+    # if resultado:
+    #     st.write(f"Data do ingresso no cargo: {resultado.get('data_ingresso', '')}")
+    #     st.write(f"Data da inatividade: {resultado.get('data_inatividade', '')}")
+    #     st.write(f"Data da petição inicial: {resultado.get('data_peticao', '')}")
+    
     # Checkbox para "Prova do vínculo"
     prova_vinculo = st.checkbox(
         'Prova do vínculo', 
